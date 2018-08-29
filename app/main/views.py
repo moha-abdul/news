@@ -6,8 +6,9 @@ from app import app
 def index():
 
     '''
-    View root page function that returns the index page and its data
+    View root page function that returns the index page which shows the 
     '''
 
     message = 'News API .'
     return render_template('index.html',message = message)
+    
