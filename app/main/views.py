@@ -12,8 +12,8 @@ def index():
     View root page function that returns the index page which shows the 
     '''
 
-    message = 'News API .'
-    return render_template('index.html',message = message)
+    title = 'The News API .'
+    return render_template('index.html',title = title)
 
 # View article route that will have the article lists in each source
 
