@@ -28,3 +28,24 @@ def get_articles(sources):
 
 
     return article_results
+
+def process_results(article_list):
+    '''
+    Function  that processes the movie result and transform them to a list of Objects
+
+    Args:
+        movie_list: A list of dictionaries that contain movie details
+
+    Returns :
+        movie_results: A list of movie objects
+    '''
+    article_results = []
+    for article_item in article_list:
+        id = article_item.get('id')
+        name = article_item.get('name')
+
+        # if poster:
+        #     article_object = Source(id,name)
+        #     article_results.append(article_object)
+
+    return article_results
