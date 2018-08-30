@@ -5,6 +5,14 @@
         <title> {{ title }}</title>
     </head>
     <body>
-
+        <body>
+        <!-- Article Sources  -->
+        <h3> Article Sources</h3>
+         <ul>
+            {% for article_source in source %}
+                <li>{{ article_source.name}}</li>
+            {% endfor %}
+        </ul>
+ </body>
     </body>
 </html>
