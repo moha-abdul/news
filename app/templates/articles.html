@@ -1,7 +1,7 @@
 <h3> Article</h3>
          <ul>
             {% for article_title in id %}
-                <a href=''>
+                <a href='{{article_title.url}}'>
                 <li> {{ article_title.title}}</li>
                 <img src='{{article_title.urlToImage}}'>
                 </a>
