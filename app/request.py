@@ -81,8 +81,9 @@ def process_articles(articles_list):
         id = article_item.get('id')
         title = article_item.get('title')
         overview = article_item.get('description')
+        urlToImage = article_item.get('urlToImage')
 
-        article_list = Articles(id,title,overview)
+        article_list = Articles(id,title,overview,urlToImage)
         article_object.append(article_list)
 
     return article_object
