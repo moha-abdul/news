@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +11,7 @@
         <h3> Article Sources</h3>
          <ul>
             {% for article_source in source %}
-                <li>{{ article_source.name}}</li>
+                <a href="/articles/{{article_source.id}}"><li>{{ article_source.name}}</li></a>
             {% endfor %}
         </ul>
  </body>

@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_articles
+from .request import get_sources, get_article
 
 # Views
 
@@ -15,20 +15,22 @@ def index():
 
     title = 'The News API .'
     # Getting article sources
-    article_sources = get_articles('source')
+    article_sources = get_sources('source')
     print(article_sources)
 
     return render_template('index.html', title = title, source = article_sources)
 
 # View article route that will have the article lists in each source
 
-@app.route('/articles')
-def articles(article_id):
+@app.route('/articles/<id>')
+def articles(id):
 
     '''
     View article sources page function that returns the list of articles from that source
     '''
-    return render_template('articles.html',id = article_id)
+    article = get_article(id)
+    # article_title = get_article(id)
+    return render_template('articles.html',id = article)
 
 # View individual article, its posting time and author.
 
