@@ -1,12 +1,12 @@
-from flask import render_template
-from app import app
-from .request import get_sources, get_article
+from flask import render_template, request
+from . import main
+from ..requests import get_sources, get_article
 
 # Views
 
 # index - sources route that will have the article sources list
 
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -22,7 +22,7 @@ def index():
 
 # View article route that will have the article lists in each source
 
-@app.route('/articles/<id>')
+@main.route('/articles/<id>')
 def articles(id):
 
     '''
@@ -34,7 +34,7 @@ def articles(id):
 
 # View individual article, its posting time and author.
 
-@app.route('/article')
+@main.route('/article')
 def article(article_id):
 
     '''

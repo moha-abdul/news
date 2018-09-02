@@ -1,6 +1,6 @@
 import unittest
-from models import source
-Source = source.Source
+from app.models import Source
+
 
 class SourceTest(unittest.TestCase):
     '''
