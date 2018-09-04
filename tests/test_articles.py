@@ -11,7 +11,8 @@ class ArticleTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_articles = Articles(12,'BBC','Good','urlToImage','url')
+        self.new_articles = Articles(12,'BBC','Good','urlToImage','url','author', 'publishedAt')
+        
     def test_instance(self):
         self.assertTrue(isinstance(self.new_articles,Articles))
 

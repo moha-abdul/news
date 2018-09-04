@@ -1,4 +1,6 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,14 +8,18 @@
         <title> {{ title }}</title>
     </head>
     <body>
-        <body>
+    {% block body %}
+        <!-- Navbar -->
+
         <!-- Article Sources  -->
         <h3> Article Sources</h3>
          <ul>
             {% for article_source in source %}
-                <a href="/articles/{{article_source.id}}"><li>{{ article_source.name}}</li></a>
+                <a href="/articles/{{article_source.id}}">
+                    <li>{{ article_source.name}}</li>
+                </a>
             {% endfor %}
         </ul>
- </body>
+        {% endblock %}
     </body>
 </html>

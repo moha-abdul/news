@@ -10,34 +10,29 @@ from ..requests import get_sources, get_article
 def index():
 
     '''
-    View root page function that returns the index page which shows the 
+    View root page function that returns the index page which shows the article sources
     '''
 
-    title = 'The News API .'
+    title = 'The News API'
+
     # Getting article sources
     article_sources = get_sources('source')
     print(article_sources)
-
+    '''
+    renders index.html template
+     '''
     return render_template('index.html', title = title, source = article_sources)
 
-# View article route that will have the article lists in each source
+# View article route that will have the article lists in each source, an image from the site, the author and the time posted
 
 @main.route('/articles/<id>')
 def articles(id):
 
     '''
-    View article sources page function that returns the list of articles from that source
+    View article sources page function that returns the list of articles from that source, with image, author and description
     '''
     article = get_article(id)
-    # article_title = get_article(id)
-    return render_template('articles.html',id = article)
+    # article_author = get_article('author')
 
-# View individual article, its posting time and author.
 
-@main.route('/article')
-def article(article_id):
-
-    '''
-    View article function that returns the article and author
-    '''
-    return render_template('article.html',id = article_id)
+    return render_template('articles.html', id = article)

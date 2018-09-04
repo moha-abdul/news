@@ -1,9 +1,17 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block body %}
 <h3> Article</h3>
-        <ul>
-            {% for article_title in id %}
-                <a href='{{article_title.url}}'>
-                <li> {{ article_title.title}}</li>
+    <ul>
+        {% for article_title in id %}
+            <a href='{{article_title.url}}'>
+                <li>
+                {{ article_title.title}},{{article_title.author}}, {{article_title.publishedAt}}
                 <img src='{{article_title.urlToImage}}'>
-                </a>
-            {% endfor %}
-        </ul>
+                {{article_title.description}}
+                </li>
+            </a>
+        {% endfor %}
+    </ul>
+{% endblock %}

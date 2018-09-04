@@ -24,7 +24,7 @@ def configure_request(app):
 
 def get_sources(source):
     '''
-    Function that gets the json response to our url request
+    Function that gets the json response to our url request for the news sources
     '''
     get_sources_url = source_base_url.format(source,api_key)
 
@@ -32,6 +32,7 @@ def get_sources(source):
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
 
+        ''' Article sources object '''
         article_sources = None
 
         if get_sources_response['sources']:
@@ -62,6 +63,9 @@ def process_sources(source_list):
     return article_sources
 
 def get_article(id):
+    '''
+    Function that gets the json response to our url request for the news articles
+    '''
     get_article_details_url = article_base_url.format(id,api_key)
 
     with urllib.request.urlopen(get_article_details_url) as url:
@@ -83,17 +87,20 @@ def process_articles(articles_list):
         article_list: A list of dictionaries that contain article titles
 
     Returns :
-        article_titles: A list of movie objects
+        article_titles: A list of news sources objects
     '''
     article_object = []
     for article_item in articles_list:
         id = article_item.get('id')
         title = article_item.get('title')
-        overview = article_item.get('description')
+        description = article_item.get('description')
         urlToImage = article_item.get('urlToImage')
         url = article_item.get('url')
+        author = article_item.get('author')
+        publishedAt = article_item.get('publishedAt')
 
-        article_list = Articles(id,title,overview,urlToImage,url)
+
+        article_list = Articles(id, title, description, urlToImage, url, author, publishedAt)
         article_object.append(article_list)
 
     return article_object
