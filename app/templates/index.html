@@ -9,17 +9,18 @@
     </head>
     <body>
     {% block body %}
-        <!-- Navbar -->
-
-        <!-- Article Sources  -->
-        <h3> Article Sources</h3>
-         <ul>
+    <div class="row">
             {% for article_source in source %}
+            <div class="col-md-4 card text-white bg-primary mb-3" style="max-width: 20rem;">
                 <a href="/articles/{{article_source.id}}">
-                    <li>{{ article_source.name}}</li>
+                <div class="card-body">
+                    <h4 class="card-title">{{ article_source.name}} </h4>
+                    <p class="card-text">Articles from {{ article_source.name}} news site</p>
+                </div>
                 </a>
+            </div>
             {% endfor %}
-        </ul>
-        {% endblock %}
+        </div>
+    {% endblock %}
     </body>
 </html>

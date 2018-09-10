@@ -2,16 +2,26 @@
 {% import 'macros.html' as macro%}
 
 {% block body %}
-<h3> Article</h3>
-    <ul>
-        {% for article_title in id %}
-            <a href='{{article_title.url}}'>
-                <li>
-                {{ article_title.title}},{{article_title.author}}, {{article_title.publishedAt}}
-                <img src='{{article_title.urlToImage}}'>
-                {{article_title.description}}
-                </li>
-            </a>
-        {% endfor %}
-    </ul>
+<div>
+    <div class="row">
+            {% for article_title in id %}
+                <div class="col-md-5">
+                    <a href="{{article_title.url}}">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ article_title.title}}</h5>
+                    </div>
+                    <img style="height: 200px; width: 100%; display: block;" src="{{article_title.urlToImage}}" alt="Card image">
+                    <div class="card-body">
+                    <p class="card-text"> {{article_title.description}} </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Author: {{article_title.author}}</li>
+                    <li class="list-group-item">Date: {{article_title.publishedAt}}</li>
+                    </ul>
+                    </a>  
+                </div>
+            
+            {% endfor %}
+    </div>
+</div>
 {% endblock %}

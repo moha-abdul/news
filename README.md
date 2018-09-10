@@ -27,14 +27,17 @@ Move to the folder and install requirements. The requirements are available in r
 run cd (inside the news folder) pip install -r requirements.txt
 
 
-Run the application
+###### Run the application
+
 python3.7 manager.py server
 
 Open the app on your browser, by default on 127.0.0.1:5000.
 
-Technology used
+
 Python3.6
+
 Flask framework
+
 Heroku app for deployment
 
 ## License (MIT License)
