@@ -13,7 +13,9 @@ This applications uses the NEWS API to provide article sources from around the w
 
 ### Live Site
 
-The deployed app on heroku can be accessed from the following Link
+The deployed app on heroku can be accessed from the following Link 
+
+https://moha-news-api.herokuapp.com/
 
 
 to clone this repository, run this command
